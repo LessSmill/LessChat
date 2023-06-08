@@ -1,0 +1,114 @@
+﻿<Window x:Class="NewChatSednev.AboutProgramPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewChatSednev"
+        mc:Ignorable="d"
+       AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen" 
+        Height="500" Width="300">
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+        <Border Grid.RowSpan="1"
+                VerticalAlignment="Stretch"
+                MouseDown="Border_MouseDown">
+
+            <Grid Style="{DynamicResource Header}">
+
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+
+                    <Button Content="_"
+                            Style="{DynamicResource HeaderButton}"
+                            Margin="0,0,0,3"
+                            Click="ButtonMinimize_Click"/>
+
+                    <Button Content="✕"
+                            Style="{DynamicResource HeaderButton}"
+                            Margin="0,0,5,0"
+                            Click="CloseButton_Click"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+        <Border MouseDown="Border_MouseDown" Grid.Row="1">
+
+            <Grid Style="{DynamicResource Main}">
+
+                <StackPanel>
+
+                    <Image x:Name="LogoPNG"
+                           Source="./Icon/LightThemsLogo.png"
+                           Width="150" Height="150"
+                           Margin="0,0,0,-40"/>
+                    
+                    <Label HorizontalAlignment="Center"
+                           Margin="0,0,0,0"
+                           Content="LESS-CHAT"
+                           FontSize="26"
+                           Style="{DynamicResource HeaderLabel}"/>
+                
+                </StackPanel>
+                
+                <StackPanel VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,0">
+
+                    <Label  Style="{DynamicResource FooterText}"
+                            FontSize="18"
+                            Margin="0,90,0,0"
+                            Content="            Все права защищены.&#10;Запрещено копирование контента."/>
+
+                    <Label Style="{DynamicResource FooterText}"
+                           FontSize="18"
+                           Margin="0,30,0,0"
+                           Content="         Разработчик программы: &#10;    Седнев Александр Витальевич &#10;    E-mail: baston.marik@yandex.ru  "/>
+                </StackPanel>
+                
+                <StackPanel VerticalAlignment="Bottom"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,10">
+
+                    <StackPanel Margin="0,0,0,0"
+                                Orientation="Horizontal">
+
+                        <Button x:Name="Back"
+                                Content="Вернуться"
+                                Margin="5,0,0,5"
+                                Style="{DynamicResource FooterButton}" Click="Back_Click"/>
+
+                        <Button x:Name="Themes"
+                                Margin="15,0,0,5"
+                                Width="25" Height="25"
+                                Style="{DynamicResource FooterButton}" 
+                                Click="Themes_Click">
+                            <Image Source="Icon/LightNew.png"
+                                   x:Name="IconThemes"
+                                   Width="20" Height="20" 
+                                   OpacityMask="Black"/>
+
+                        </Button>
+
+                    </StackPanel>
+
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</Window>
